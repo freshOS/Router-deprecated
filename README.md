@@ -92,3 +92,15 @@ Router.default.didNavigate { navigation in
 }
 
 ```
+
+## Installation
+
+#### Carthage
+```
+github "freshOS/Router"
+```
+#### Manually
+Simply Copy and Paste `Router.swift` files in your Xcode Project :)
+
+#### As A Framework
+Grab this repository and build the Framework target on the example project. Then Link against this framework.

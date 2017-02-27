@@ -100,6 +100,37 @@ Router.default.didNavigate { navigation in
 
 ```
 
+## Shave off compilation times
+
+There is a nasty bug in Swift 3 compiler where the compiler rebuilds files even though they haven't changed.
+This is documented here : https://forums.developer.apple.com/thread/62737?tstart=0
+
+Due to this bug, the compilation can go like this :
+
+Change `ViewController1` -> `Build`  
+-> Compiles `ViewController1`, referenced in `MyAppNavigation` so   
+`MyAppNavigation` gets recompiled.  `MyAppNavigation` is referenced in `AppDelegate` which gets recompiled which references ...
+`App` -> `ViewController2` -> `ViewController3` -> `ViewControllerX` you get the point.
+Before you know it the entire App gets rebuilt :/
+
+A good this is that most of the app coupling usually comes from navigation. which Router decouples.
+
+We can stop this nonsense until this gets fixed in a future release of Xcode.
+Router can help us manage this issue by injecting our AppNavigation implementation at runtime.
+
+
+In your `AppDelegate.swift`
+
+```swift
+// Inject  your AppNavigation  at runtime to avoid recompilation of AppDelegate :)
+Router.default.setupAppNavigation(appNavigation: appNavigationFromString("YourAppName.MyAppNavigation"))
+```
+
+And make sure your `AppNavigation` implementation is now a `class` that is `RuntimeInjectable`
+```swift
+class MyAppNavigation: RuntimeInjectable, AppNavigation {
+```
+
 ## Installation
 
 #### Carthage

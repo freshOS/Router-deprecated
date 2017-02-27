@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		997CC25A1E64079100250EB1 /* Router.h in Headers */ = {isa = PBXBuildFile; fileRef = 997CC2581E64079100250EB1 /* Router.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		997CC2611E6407A000250EB1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997CC2601E6407A000250EB1 /* Router.swift */; };
+		997ECB521E645B5700384E63 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 997ECB4F1E645B5700384E63 /* Info.plist */; };
+		997ECB531E645B5700384E63 /* Router.h in Headers */ = {isa = PBXBuildFile; fileRef = 997ECB501E645B5700384E63 /* Router.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		997ECB541E645B5700384E63 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997ECB511E645B5700384E63 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		997CC2551E64079100250EB1 /* Router.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Router.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		997CC2581E64079100250EB1 /* Router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Router.h; sourceTree = "<group>"; };
-		997CC2591E64079100250EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		997CC2601E6407A000250EB1 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		997ECB4F1E645B5700384E63 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
+		997ECB501E645B5700384E63 /* Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Router.h; path = Sources/Router.h; sourceTree = SOURCE_ROOT; };
+		997ECB511E645B5700384E63 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Sources/Router.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +49,9 @@
 		997CC2571E64079100250EB1 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				997CC2581E64079100250EB1 /* Router.h */,
-				997CC2601E6407A000250EB1 /* Router.swift */,
-				997CC2591E64079100250EB1 /* Info.plist */,
+				997ECB4F1E645B5700384E63 /* Info.plist */,
+				997ECB501E645B5700384E63 /* Router.h */,
+				997ECB511E645B5700384E63 /* Router.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -62,7 +63,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				997CC25A1E64079100250EB1 /* Router.h in Headers */,
+				997ECB531E645B5700384E63 /* Router.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997ECB521E645B5700384E63 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				997CC2611E6407A000250EB1 /* Router.swift in Sources */,
+				997ECB541E645B5700384E63 /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +252,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Router/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -271,7 +273,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Router/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -301,6 +303,7 @@
 				997CC25F1E64079100250EB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

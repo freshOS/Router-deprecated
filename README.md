@@ -9,9 +9,9 @@ navigationController?.pushViewController(AboutViewController(), animated: true)
 navigate(.about)
 ```
 
-[x] Decouples Viewcontrollers  
-[x] Testable navigation  
-[x] Faster compile times
+- [x] Decouples Viewcontrollers  
+- [x] Testable navigation  
+- [x] Faster compile times
 
 A cool side effect of extracting navigation logic on big projects is improving compilation times.
 Indeed Strong dependencies due to navigation code often makes Xcode recompile files you never modified. Router enables you to extract your routing logic in a separate file.
@@ -76,7 +76,7 @@ extension UIViewController {
     }
 }
 ```
-You can now write : 
+You can now write :
 ```swift
 navigate(.about)
 ```

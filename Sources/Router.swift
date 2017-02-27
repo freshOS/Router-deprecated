@@ -54,3 +54,16 @@ public class DefaultRouter: IsRouter {
         didNavigateBlocks.append(block)
     }
 }
+
+// Injection helper
+public protocol Initializable { init() }
+public class RuntimeInjectable: NSObject, Initializable {
+    public required override init() {}
+}
+
+public func appNavigationFromString(_ appNavigationClassString: String) -> AppNavigation {
+    let appNavClass = NSClassFromString(appNavigationClassString) as! RuntimeInjectable.Type
+    let appNav = appNavClass.init()
+    return appNav as! AppNavigation
+}
+

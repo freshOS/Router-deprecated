@@ -23,6 +23,7 @@ public protocol IsRouter {
     func setupAppNavigation(appNavigation: AppNavigation)
     func navigate(_ navigation: Navigation, from: UIViewController)
     func didNavigate(block: @escaping (Navigation) -> Void)
+    var appNavigation: AppNavigation? { get }
 }
 
 public extension UIViewController {
@@ -33,7 +34,7 @@ public extension UIViewController {
 
 public class DefaultRouter: IsRouter {
     
-    var appNavigation: AppNavigation?
+    public var appNavigation: AppNavigation?
     var didNavigateBlocks = [((Navigation) -> Void)] ()
     
     public func setupAppNavigation(appNavigation: AppNavigation) {

@@ -9,7 +9,7 @@
 import UIKit
 
 public class Router {
-    static let `default`:IsRouter = DefaultRouter()
+    public static let `default`:IsRouter = DefaultRouter()
 }
 
 public protocol Navigation { }

@@ -25,8 +25,8 @@ public protocol IsRouter {
     func didNavigate(block: @escaping (Navigation) -> Void)
 }
 
-extension UIViewController {
-    func navigate(_ navigation: Navigation) {
+public extension UIViewController {
+    public func navigate(_ navigation: Navigation) {
         Router.default.navigate(navigation, from: self)
     }
 }

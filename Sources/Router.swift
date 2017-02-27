@@ -57,7 +57,7 @@ public class DefaultRouter: IsRouter {
 
 // Injection helper
 public protocol Initializable { init() }
-public class RuntimeInjectable: NSObject, Initializable {
+open class RuntimeInjectable: NSObject, Initializable {
     public required override init() {}
 }
 

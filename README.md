@@ -32,7 +32,7 @@ enum MyNavigation: Navigation {
 struct MyAppNavigation: AppNavigation {
 
     func viewcontrollerForNavigation(navigation: Navigation) -> UIViewController {
-        if let navigation = navigation as? YPNavigation {
+        if let navigation = navigation as? MyNavigation {
             switch navigation {
             case .about:
                 return AboutViewController()
@@ -71,7 +71,7 @@ Bridge `Navigation` with your own enum type, here `MyNavigation` so that we don'
 ```swift
 extension UIViewController {
 
-    func navigate(_ navigation: YPNavigation) {
+    func navigate(_ navigation: MyNavigation) {
         navigate(navigation as Navigation)
     }
 }

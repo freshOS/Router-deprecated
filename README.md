@@ -7,23 +7,29 @@
 <!-- [![codebeat badge](https://codebeat.co/badges/768d3017-1e65-47e0-b287-afcb8954a1da)](https://codebeat.co/projects/github-com-s4cha-then) -->[![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/freshOS/then/blob/master/LICENSE)
 [![Release version](https://img.shields.io/badge/release-0.0.6-blue.svg)]()
 
-Decouples routing between ViewControllers
 
+![Router](https://raw.githubusercontent.com/freshOS/Router/master/Infographics.png)
+
+## Why
+Because **classic App Navigation** introduces **tight coupling** between ViewControllers.
+Complex Apps navigation can look like a **gigantic spider web**.
+
+Besides the fact that **Navigation responsibility is split** among ViewControllers, modifying a ViewController can cascade recompiles and produce **slow compile times.**
+
+## How
+By using a Navigation `enum` to navigate we decouple ViewControllers between them. Aka they don't know each other anymore. So modifying `VCA` won't trigger `VCB` to recompile anymore \o/
 
 ```swift
-// From
-navigationController?.pushViewController(AboutViewController(), animated: true)
-// to
+// navigationController?.pushViewController(AboutViewController(), animated: true)
 navigate(.about)
 ```
 
-- [x] Decouples Viewcontrollers  
-- [x] Testable navigation  
+Navigation code is now encapsulated in a `AppNavigation` object.
+
+## Benefits
+- [x] Decouples ViewControllers  
+- [x] Makes navigation Testable   
 - [x] Faster compile times
-
-A cool side effect of extracting navigation logic on big projects is improving compilation times.
-Indeed Strong dependencies due to navigation code often makes Xcode recompile files you never modified. Router enables you to extract your routing logic in a separate file.
-
 
 ## Get started
 
@@ -31,8 +37,11 @@ Indeed Strong dependencies due to navigation code often makes Xcode recompile fi
 ```swift
 enum MyNavigation: Navigation {
     case about
+    case profile(Person)
 }
 ```
+Swift enum can take params!
+Awesome for us because that's how we will pass data between ViewControllers :)
 
 ### 2 - Declare your App Navigation
 
@@ -44,20 +53,21 @@ struct MyAppNavigation: AppNavigation {
             switch navigation {
             case .about:
                 return AboutViewController()
+              case .profile(let p):
+                return ProfileViewController(person: p)
             }
         }
         return UIViewController()
     }
 
     func navigate(_ navigation: Navigation, from: UIViewController, to: UIViewController) {
-        if let myNavigation = navigation as? MyNavigation {
-            switch myNavigation {
-            case .about:
-                from.navigationController?.pushViewController(to, animated: true)
-            }
-        }
+      from.navigationController?.pushViewController(to, animated: true)
     }
 }
+
+A cool thing is that the swift compiler will produce an error if a navigation
+case is not handled !
+(which would'nt be the case with URL strings for example)
 ```
 
 ### 3 - Register your navigation on App Launch

@@ -8,6 +8,8 @@
 [![Release version](https://img.shields.io/badge/release-0.0.6-blue.svg)]()
 
 
+[Reason](#why) - [Get Started](#get-started) - [Installation](#installation)
+
 ![Router](https://raw.githubusercontent.com/freshOS/Router/master/Infographics.png)
 
 ## Why
@@ -53,7 +55,7 @@ struct MyAppNavigation: AppNavigation {
             switch navigation {
             case .about:
                 return AboutViewController()
-              case .profile(let p):
+            case .profile(let p):
                 return ProfileViewController(person: p)
             }
         }
@@ -64,11 +66,11 @@ struct MyAppNavigation: AppNavigation {
       from.navigationController?.pushViewController(to, animated: true)
     }
 }
+```
 
 A cool thing is that the swift compiler will produce an error if a navigation
-case is not handled !
-(which would'nt be the case with URL strings for example)
-```
+case is not handled ! Which would'nt be the case with string URLs by the way ;)
+
 
 ### 3 - Register your navigation on App Launch
 

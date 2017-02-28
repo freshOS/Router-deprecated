@@ -9,48 +9,48 @@
 import UIKit
 
 public class Router {
-    public static let `default`:IsRouter = DefaultRouter()
+    public static let `default`: NavigationRouter = DefaultRouter()
 }
 
 public protocol Navigation { }
 
 public protocol AppNavigation {
-    func viewcontrollerForNavigation(navigation: Navigation) -> UIViewController
-    func navigate(_ navigation: Navigation, from: UIViewController, to: UIViewController)
+    func viewController(for navigation: Navigation) -> UIViewController
+    func navigate(using navigation: Navigation, from sourceViewController: UIViewController, to destinationViewController: UIViewController)
 }
 
-public protocol IsRouter {
-    func setupAppNavigation(appNavigation: AppNavigation)
-    func navigate(_ navigation: Navigation, from: UIViewController)
-    func didNavigate(block: @escaping (Navigation) -> Void)
+public protocol NavigationRouter {
+    func setupAppNavigation(_ appNavigation: AppNavigation)
+    func navigate(using navigation: Navigation, from sourceViewController: UIViewController)
+    func didNavigate(_ block: @escaping (Navigation) -> Void)
     var appNavigation: AppNavigation? { get }
 }
 
 public extension UIViewController {
-    public func navigate(_ navigation: Navigation) {
-        Router.default.navigate(navigation, from: self)
+    public func navigate(using navigation: Navigation) {
+        Router.default.navigate(using: navigation, from: self)
     }
 }
 
-public class DefaultRouter: IsRouter {
+public class DefaultRouter: NavigationRouter {
     
     public var appNavigation: AppNavigation?
-    var didNavigateBlocks = [((Navigation) -> Void)] ()
+    var didNavigateBlocks = [((Navigation) -> Void)]()
     
-    public func setupAppNavigation(appNavigation: AppNavigation) {
+    public func setupAppNavigation(_ appNavigation: AppNavigation) {
         self.appNavigation = appNavigation
     }
     
-    public func navigate(_ navigation: Navigation, from: UIViewController) {
-        if let toVC = appNavigation?.viewcontrollerForNavigation(navigation: navigation) {
-            appNavigation?.navigate(navigation, from: from, to: toVC)
+    public func navigate(using navigation: Navigation, from sourceViewController: UIViewController) {
+        if let destinationViewController = appNavigation?.viewController(for: navigation) {
+            appNavigation?.navigate(using: navigation, from: sourceViewController, to: destinationViewController)
             for b in didNavigateBlocks {
                 b(navigation)
             }
         }
     }
     
-    public func didNavigate(block: @escaping (Navigation) -> Void) {
+    public func didNavigate(_ block: @escaping (Navigation) -> Void) {
         didNavigateBlocks.append(block)
     }
 }

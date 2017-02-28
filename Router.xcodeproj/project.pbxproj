@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		997ECB521E645B5700384E63 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 997ECB4F1E645B5700384E63 /* Info.plist */; };
 		997ECB531E645B5700384E63 /* Router.h in Headers */ = {isa = PBXBuildFile; fileRef = 997ECB501E645B5700384E63 /* Router.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		997ECB541E645B5700384E63 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997ECB511E645B5700384E63 /* Router.swift */; };
 /* End PBXBuildFile section */
@@ -126,7 +125,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				997ECB521E645B5700384E63 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

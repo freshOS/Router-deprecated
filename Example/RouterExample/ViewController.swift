@@ -15,15 +15,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func presentRed(_ sender: UIButton) {
-        navigate(using: ExampleNavigation.red)
+        navigate(using: .red)
     }
 
     @IBAction func presentGreen(_ sender: UIButton) {
-        navigate(using: ExampleNavigation.green(42))
+        navigate(using: .green(42))
     }
     
     @IBAction func presentBlue(_ sender: UIButton) {
-        navigate(using: ExampleNavigation.blue)
+        navigate(using: .blue)
     }
     
 }

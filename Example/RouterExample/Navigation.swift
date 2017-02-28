@@ -47,3 +47,11 @@ struct ExampleAppNavigation: AppNavigation {
     }
     
 }
+
+extension UIViewController {
+    
+    func navigate(using navigation: ExampleNavigation) {
+        navigate(using: navigation as Navigation)
+    }
+    
+}

@@ -27,7 +27,7 @@ public protocol IsRouter {
 }
 
 public extension UIViewController {
-    public func navigate(_ navigation: Navigation) {
+    func navigate(_ navigation: Navigation) {
         Router.default.navigate(navigation, from: self)
     }
 }

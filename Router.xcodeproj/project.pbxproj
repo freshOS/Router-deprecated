@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		997ECB531E645B5700384E63 /* Router.h in Headers */ = {isa = PBXBuildFile; fileRef = 997ECB501E645B5700384E63 /* Router.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		997ECB541E645B5700384E63 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997ECB511E645B5700384E63 /* Router.swift */; };
+		99F87A5823B1029700E16A4C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F87A5723B1029700E16A4C /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		997CC2551E64079100250EB1 /* Router.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Router.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		997ECB4F1E645B5700384E63 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
 		997ECB501E645B5700384E63 /* Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Router.h; path = Sources/Router.h; sourceTree = SOURCE_ROOT; };
-		997ECB511E645B5700384E63 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Sources/Router.swift; sourceTree = SOURCE_ROOT; };
+		99F87A5723B1029700E16A4C /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Sources/Router/Router.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			children = (
 				997ECB4F1E645B5700384E63 /* Info.plist */,
 				997ECB501E645B5700384E63 /* Router.h */,
-				997ECB511E645B5700384E63 /* Router.swift */,
+				99F87A5723B1029700E16A4C /* Router.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -98,7 +98,7 @@
 				TargetAttributes = {
 					997CC2541E64079100250EB1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -136,7 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				997ECB541E645B5700384E63 /* Router.swift in Sources */,
+				99F87A5823B1029700E16A4C /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

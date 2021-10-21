@@ -1,5 +1,8 @@
 ![Router](https://raw.githubusercontent.com/freshOS/Router/master/banner.png)
 
+⚠️ Deprecated and no longer supported. Use at your own risks.  
+This has been used extensively and after weighing up pros and cons, we now favour the use of native Flow Controllers or Coordinators as explained [here](https://www.hackingwithswift.com/articles/71/how-to-use-the-coordinator-pattern-in-ios-apps).  
+The native route (pun intended) should always be favoured and we believe less dependencies is something we should always strive for.
 
 # Router
 [![Language: Swift](https://img.shields.io/badge/language-swift-f48041.svg?style=flat)](https://developer.apple.com/swift)
